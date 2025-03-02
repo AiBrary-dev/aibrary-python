@@ -5,6 +5,7 @@ import httpx
 import openai
 
 import aibrary as aib
+from aibrary.resources.image_embedding import ImageEmbedding
 from aibrary.resources.models import Model
 from aibrary.resources.object_detection import ObjectDetectionClient
 from aibrary.resources.ocr import OCRClient
@@ -42,6 +43,9 @@ class AiBrary(openai.OpenAI):
         self.object_detection = ObjectDetectionClient(
             base_url=self.base_url, api_key=self.api_key
         ).process_object_detection
+        self.image_embedding = ImageEmbedding(
+            base_url=self.base_url, api_key=self.api_key
+        ).process_image_embedding
 
     def get_all_models(
         self, return_as_objects: bool = True, filter_category: Optional[str] = None
