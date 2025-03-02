@@ -266,3 +266,13 @@ async def test_object_detection_with_multiple_modes(aibrary: AsyncAiBrary):
         filter_category="object detection",
         include_language=False,
     )
+
+
+@pytest.mark.asyncio
+async def test_image_embedding_with_multiple_modes(aibrary: AsyncAiBrary):
+    await generic_with_multiple_modes(
+        aibrary,
+        method="image_embedding",
+        filter_category="image embedding",
+        include_language=False,
+    )

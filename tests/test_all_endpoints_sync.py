@@ -315,3 +315,12 @@ def test_object_detection_with_multiple_modes(aibrary: AiBrary):
         filter_category="object detection",
         include_language=False,
     )
+
+
+def test_image_embedding_with_multiple_modes(aibrary: AiBrary):
+    generic_with_multiple_modes(
+        aibrary,
+        method="image_embedding",
+        filter_category="image embedding",
+        include_language=False,
+    )
